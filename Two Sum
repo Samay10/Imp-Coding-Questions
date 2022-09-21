@@ -1,0 +1,7 @@
+So, we have to choose two numbers from the array, such that their sum is equal to target.
+
+Here, we will us the brute force method.
+
+1) First, initialize the outer loop from i=0 to i<n.
+2) Then create an inner loop and initialize it from j=i+1 to j<n;
+3) If nums[i] + nums[j] = target, then we will return {i, j} else if not equal, then we will return {-1, -1}.
