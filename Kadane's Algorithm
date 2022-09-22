@@ -1,0 +1,26 @@
+Intuition: This problem can be solved in linear time complexity by using the Kadane's algorithm. We can also obtain the required subarray.
+
+Approach: We will have the following variables in the beginning.
+msf -> max so far, meh -> max sum ending at the ith index, start -> to get to the starting index of the ans's subarray, end -> to get to the ending index of the 
+ans's subarray
+
+Traverse from the starting of the array and add the element to max end here (meh). Now, we will see if the result gives the value greater than max so far (msf) or not. 
+If yes, then we update the value of msf and also update the starting and ending index (initially starting index is 0).
+
+for(int i=0;i<nums.size();i++){
+  meh += nums[i];
+  
+  if(meh > msf){
+    msf = meh;
+    start=s;
+    end=i;
+  }
+  
+  if(meh < 0){
+    meh = 0;
+    s = i+1;
+  }
+}
+
+Now we will print the ans subarray using the start end variables.
+Return the largest subarray sum i.e. msf.
